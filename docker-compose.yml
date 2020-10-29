@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  application:
+    image: application_image
+    build:
+      context: ./app
+    ports:
+    - 3333:3000
+    volumes:
+    - ./app:/home/node/app:rw
+    - node_modules:/home/node/app/node_modules
+
+volumes:
+  node_modules:
